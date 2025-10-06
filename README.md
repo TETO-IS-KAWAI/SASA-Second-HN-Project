@@ -8,9 +8,9 @@
 * 사용한 라이브러리는 PIL의 Image, os, sklearn.cluster의 KMeans, skimage의 io 정도
 
 ## 분석 과정
-1. Resizing
-2. Retouching
-3. Excel Analyzing
+**1. Resizing**
+**2. Retouching**
+**3. Excel Analyzing**
 
 ### Resizing
 방형구법을 바탕으로 수생 식물의 절대 피도와 상대 피도를 계산해야 하므로 우선 가로 세로 4 X 4의 형태 즉 16등분의 정사각형으로 이미지를 나누어 저장할 수 있도록 했다. 우선 이미지의 크기를 조절하기 편하도록 임의로 사이즈를 3200 픽셀의 정사각형으로 조절한 다음 16등분하여 폴더를 나누어 저장하는 과정을 os와 PIL을 사용해 자동화했다.
@@ -23,10 +23,10 @@ Retouching 단계에서 각 이미지 파일별로 색 기준 군집화하여 �
 그 후 분석하기에 가장 적합한 군집 수를 결정한 다음 그 군집 수에서의 상대 피도를 계산한다.
 이후 가로축을 **Lux**로 / 세로축을 **생이가래**의 상대 피도로 하여 그래프를 그린 후 Regression을 진행했다. 이후의 연구 과정은 보고서 그리고 발표 내용과 같다.
 
-## Acknowledge
+## Acknowledgement
 * 색을 바탕으로 군집을 묶어 점유 면적을 계산할 때 근사가 들어간다. 그리고 더 좋은 모델과 학습 방법이 있었지만 하루라는 짧은 시간 안에 분석을 해 결과를 내야 했기에 이 방법을 선택하게 되었다. 충분한 시간이 주어졌다면 신경망으로 학습을 시킨 다음 샘플을 나누어 테스트해 정답률을 높인 후 이를 바탕으로 이후 분석을 진행했을 것이다.
 * 생성형 인공지능은 사용하지 않았다. 발표를 하고 GitHub를 공개한 이후 생성형 인공지능의 사용 여부를 물어보시는 선생님들이 많아서 당황스러웠다. 코드 얼마 하지도 않는데 솔직히 인공지능한테 물어보는 시간이 더 걸릴 것 같다.
 
 ## 참고 자료
-* Scikit-Learn의 KMeans 라이브러리 Docs https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
-* K-Means Wikipedia https://en.wikipedia.org/wiki/K-means_clustering
+* **Scikit-Learn의 KMeans 라이브러리 Docs** https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
+* **K-Means Wikipedia** https://en.wikipedia.org/wiki/K-means_clustering
